@@ -5,13 +5,13 @@
     "node": "14.17.3"
   },
   "description": "Build Films API with nodejs, express, mongodb and jwt",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha ./app/api/tests/*.spec.js --timeout 10000 --exit",
     "test:watch": "mocha --watch ./app/api/tests/*.spec.js",
     "coverage": "nyc --reporter=text npm test",
     "start-gendoc": "node swagger.js",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "keywords": [
     "Node",
