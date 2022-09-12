@@ -29,10 +29,6 @@ const UserSchema = new Schema({
     trim: true,
     required: true,
     default: false
-  },
-  timestamps : {
-    created: Date,
-    updated: Date,
   }
 },
 { timestamps: true }

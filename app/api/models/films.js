@@ -58,7 +58,6 @@ const FilmSchema = new Schema({
 )
 
 FilmSchema.pre('save', function(next){
-  //  this.timestamps.created = Date.now()
   next()
 })
 module.exports = mongoose.model('Film', FilmSchema)

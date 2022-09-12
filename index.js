@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('./config/database') //database configuration
 const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require('../swagger-output.json')
+const userModel = require('./app/api/models/users')
 //const swaggerDocument = require('./swagger.json')
 let jwt = require('jsonwebtoken')
 const app = express()
@@ -35,7 +36,21 @@ function validateUser(req, res, next) {
     }else{
       // add user id to request
       req.body.userId = decoded.id
-      next()
+      if (req.method !== 'GET') {
+        userModel.findById(req.body.userId, function(err, userInfo){
+          if (err) {
+            res.json({status:'error', message: err.message, data:null})
+          } else {
+            if (userInfo.isReviewer === 'true') {
+              next()
+            } else {
+              res.status(401).json({status:'permission error', message: 'You Do Not Have Reviewer Role', data:null})
+            }
+          }
+        })
+      } else {
+        next()
+      }
     }
   })
 

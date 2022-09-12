@@ -37,7 +37,7 @@ module.exports = {
   },
   deleteById: async function(req, res, next) {
     try {
-      const result = await commentModel.findByIdAndRemove(req.params.filmId)
+      const result = await commentModel.findByIdAndRemove(req.params.commentId)
       if (result === null) {
         return res.status(404).json({message: 'Not found'})
       }

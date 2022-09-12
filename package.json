@@ -13,6 +13,21 @@
     "start-gendoc": "node swagger.js",
     "start": "node index.js"
   },
+  "nyc": {
+    "extension": [
+      ".js"
+    ],
+    "include": [
+      "app/api/**/*.js"
+    ],
+    "exclude": [
+      "mocks/mockCommentsModel.js",
+      "mocks/mockFilmsModel.js",
+      "mocks/mockSchema.js",
+      "mocks/mockSchemaModel.js",
+      "mocks/mockUsersModel.js"
+    ]
+  },
   "keywords": [
     "Node",
     "Express",
