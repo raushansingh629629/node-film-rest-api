@@ -29,7 +29,6 @@ app.use('/comments', validateUser, comments)
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 function validateUser(req, res, next) {
-  console.log('req.headers', req.headers)
   jwt.verify(req.headers['x-access-token'], req.app.get('secretKey'), function(err, decoded) {
     if (err) {
       res.json({status:'error', message: err.message, data:null})
@@ -41,13 +40,7 @@ function validateUser(req, res, next) {
   })
 
 }
-// express doesn't consider not found 404 as an error so we need to handle 404 explicitly
-// handle 404 error
-app.use(function(req, res, next) {
-  let err = new Error('Not Found')
-  err.status = 404
-  next(err)
-})
+
 // handle errors
 app.use(function(err, req, res, next) {
   console.log(err)
@@ -58,11 +51,8 @@ app.use(function(err, req, res, next) {
     res.status(500).json({message: 'Something looks wrong :( !!!'})
 })
 
-/*app.use(
-  '/api-docs',
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerDocument)
-)*/
-app.listen(3000, function(){
-  console.log('Node server listening on port 3000')
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT, function(){
+  console.log(`Node server listening on port ${PORT}`)
 })

@@ -1,13 +1,17 @@
 {
   "name": "film-api",
   "version": "1.0.0",
-  "description": "Build REST API with nodejs, express, mongodb and jwt",
+  "engines": {
+    "node": "14.17.3"
+  },
+  "description": "Build Films API with nodejs, express, mongodb and jwt",
   "main": "server.js",
   "scripts": {
     "test": "mocha ./app/api/tests/*.spec.js --timeout 10000 --exit",
     "test:watch": "mocha --watch ./app/api/tests/*.spec.js",
     "coverage": "nyc --reporter=text npm test",
-    "start-gendoc": "node swagger.js"
+    "start-gendoc": "node swagger.js",
+    "start": "node server.js"
   },
   "keywords": [
     "Node",
@@ -17,11 +21,9 @@
     "Mongodb"
   ],
   "devDependencies": {
-    "@faker-js/faker": "^7.5.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "eslint": "^4.4.0",
-    "faker": "^4.1.0",
     "mocha": "^6.2.1",
     "nyc": "^15.1.0",
     "rewire": "^6.0.0",
@@ -32,15 +34,12 @@
   "author": "Raushan Singh",
   "license": "ISC",
   "dependencies": {
-    "ava": "^4.3.3",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "express": "^4.18.1",
     "express-validator": "^6.14.2",
-    "faker": "^6.6.6",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
-    "mockgoose": "^8.0.4",
     "mongoose": "^6.5.4",
     "morgan": "^1.10.0",
     "swagger-autogen": "^2.21.5",

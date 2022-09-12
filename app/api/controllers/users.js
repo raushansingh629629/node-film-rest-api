@@ -30,7 +30,6 @@ module.exports = {
 
   },
   authenticate: async function(req, res, next) {
-    console.log('from auth==', req.headers)
     try {
       const userInfo = await userModel.findOne({'email': req.body.email})
       if(userInfo) {

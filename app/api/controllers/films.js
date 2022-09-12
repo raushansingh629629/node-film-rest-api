@@ -1,5 +1,4 @@
 const { validationResult, body } = require('express-validator')
-const filmService = require('../services/filmsService')
 const filmModel = require('../models/films')
 module.exports = {
   show: async function(req, res, next) {
