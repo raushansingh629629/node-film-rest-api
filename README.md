@@ -11,3 +11,7 @@ then
 #Run test case with code coverage
 
 ```npm run coverage```
+
+#Swagger Page
+
+http://localhost:3000/api-docs/
