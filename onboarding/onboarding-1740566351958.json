@@ -1,0 +1,26 @@
+{
+  "github": {
+    "Application LOB": "gthub test lob",
+    "Service Now CMDB Name": "git cmdb",
+    "Service Now Applicaion UNID Name": "gdgdf56",
+    "Repository Name": "node-test-api",
+    "Write Group Name": "BG-HG-Write",
+    "Read Group Name": "BG-HG-Read",
+    "Do You Maintain Sensitive Data Inside Private Repo ?": "Yes",
+    "Devops Workflow Types": "Non-PCF"
+  },
+  "jenkins": {
+    "lob": "jenkins lob",
+    "workflow": "jenkins workflow"
+  },
+  "jfrog": {
+    "repoName": "jfrog repo name",
+    "adGroup": "jfrog adgroup",
+    "packageType": "jfrog package type"
+  },
+  "xld": {
+    "Service now CMDB name and UNID": "xld service now cmdb",
+    "Enter application type": "Java/Batch",
+    "Enter container type": true
+  }
+}
